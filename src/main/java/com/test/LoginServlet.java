@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,7 +38,9 @@ public class LoginServlet extends HttpServlet {
 				HttpSession httpSession = request.getSession(true);
 				httpSession.setAttribute("userName", userName);
 				httpSession.setAttribute("password", password);
-
+				Cookie cookie = new Cookie ("JSESSIONID", httpSession.getId());
+				cookie.setMaxAge(3000);
+				response.addCookie(cookie);
 			}
 		}
 		dispatcher = request.getRequestDispatcher("Result.jsp");
