@@ -7,6 +7,10 @@
 	<listener>
 		<listener-class>com.test.ContextListener</listener-class>
 	</listener>
+	
+	<listener>
+		<listener-class>com.test.MyHttpSessionListener</listener-class>
+	</listener>
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

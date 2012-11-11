@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSessionListener;
 
 public class MyHttpSessionListener implements HttpSessionListener {
 	public void sessionCreated(HttpSessionEvent event) {
-		event.getSession().setMaxInactiveInterval(5);
+		System.out.println("Session creation time "+event.getSession().getCreationTime());
 	}
 
 	public void sessionDestroyed(HttpSessionEvent event) {
