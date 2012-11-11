@@ -1,0 +1,1 @@
+1) If you disable cookies sessions does not work.
