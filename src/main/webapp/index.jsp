@@ -4,6 +4,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>login</title>
+
+<!-- This session attribute "false" helps not to create a session when someone calls this page. If this is not 
+provided then a session is created by default -->
+<%@ page session="false" %>
 </head>
 <body>
 	<form action="index" method="post">
