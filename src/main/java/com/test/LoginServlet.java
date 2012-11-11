@@ -38,11 +38,16 @@ public class LoginServlet extends HttpServlet {
 				HttpSession httpSession = request.getSession(true);
 				httpSession.setAttribute("userName", userName);
 				httpSession.setAttribute("password", password);
-				Cookie cookie = new Cookie ("JSESSIONID", httpSession.getId());
+				Cookie cookie = new Cookie("JSESSIONID", httpSession.getId());
 				cookie.setMaxAge(3000);
 				response.addCookie(cookie);
 			}
 		}
+
+		if (request.getSession().isNew()) {
+			System.out.println("The session is new");
+		}
+		
 		dispatcher = request.getRequestDispatcher("Result.jsp");
 		dispatcher.forward(request, response);
 
